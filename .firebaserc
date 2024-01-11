@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kanban-fire-workshop-52a4f": {
+      "hosting": {
+        "kanban-fire": [
+          "kanban-fire-workshop-52a4f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kanban-fire-workshop-52a4f"
+  }
+}

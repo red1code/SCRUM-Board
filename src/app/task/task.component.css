@@ -1,0 +1,10 @@
+:host {
+    display: block;
+}
+.item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+/* mat-card {
+    color: #3f51b5;
+} */

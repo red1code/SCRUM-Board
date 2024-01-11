@@ -1,0 +1,77 @@
+mat-toolbar {
+  margin-bottom: 20px;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top: 0;
+  box-shadow: 0 0 9px 0 #000000;
+  z-index: 100;
+}
+
+mat-toolbar>span {
+  margin-left: 10px;
+}
+
+button {
+  border: solid 1px;
+  margin: 0 20px;
+  position: absolute;
+  right: 0;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.container-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  width: 400px;
+  margin: 0 25px 25px 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+.list {
+  border: solid 1px #ccc;
+  min-height: 60px;
+  border-radius: 4px;
+}
+
+app-task {
+  margin-bottom: 30px;
+}
+
+.empty-lable {
+  font-size: 2em;
+  padding-top: 10px;
+  text-align: center;
+  opacity: 0.2;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms;
+}
+
+h2 {
+  color: #3f51b5;
+}
+
+mat-card {
+  background-color: #3f51b5;
+}
+
+mat-card>p {
+  color: #fff;
+  opacity: 0.3;
+  cursor: zoom-in;
+}

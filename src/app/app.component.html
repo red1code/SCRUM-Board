@@ -1,0 +1,59 @@
+<mat-toolbar color="primary">
+  <mat-icon>local_fire_department</mat-icon>
+  <span>KanbanFire</span>
+
+  <button mat-button (click)="newTask()">
+    <mat-icon>add</mat-icon>Add Task
+  </button>
+</mat-toolbar>
+
+<div class="content-wrapper">
+  <div class="container-wrapper">
+
+    <div class="container">
+      <h2>Backlog</h2>
+      <mat-card cdkDropList id="todo"
+                #todoList="cdkDropList"
+                [cdkDropListData]="todo | async"
+                (cdkDropListDropped)="drop($event)"
+                [cdkDropListConnectedTo]="[inProgressList, doneList]">
+        <p class="empty-lable" *ngIf="(todo | async)?.length === 0">Empty List</p>
+        <app-task cdkDrag
+                  *ngFor="let task of todo | async"
+                  [task]="task"
+                  (edit)="edit('todo', $event)"></app-task>
+      </mat-card>
+    </div>
+
+    <div class="container">
+      <h2>In Progress</h2>
+      <mat-card cdkDropList id="inProgress"
+                #inProgressList="cdkDropList"
+                [cdkDropListData]="inProgress | async"
+                (cdkDropListDropped)="drop($event)"
+                [cdkDropListConnectedTo]="[todoList, doneList]">
+        <p class="empty-lable" *ngIf="(inProgress | async)?.length === 0">Empty List</p>
+        <app-task cdkDrag
+                  *ngFor="let task of inProgress | async"
+                  [task]="task"
+                  (edit)="edit('inProgress', $event)"></app-task>
+      </mat-card>
+    </div>
+
+    <div class="container">
+      <h2>Done</h2>
+      <mat-card cdkDropList id="done"
+                #doneList="cdkDropList"
+                [cdkDropListData]="done | async"
+                (cdkDropListDropped)="drop($event)"
+                [cdkDropListConnectedTo]="[todoList, inProgressList]">
+        <p class="empty-lable" *ngIf="(done | async)?.length === 0">Empty List</p>
+        <app-task cdkDrag
+                  *ngFor="let task of done | async"
+                  [task]="task"
+                  (edit)="edit('done', $event)"></app-task>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
